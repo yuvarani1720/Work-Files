@@ -1,0 +1,91 @@
+[ec2-user@ip-172-31-1-53 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-1-53 ~]$ mkdir my_folder
+[ec2-user@ip-172-31-1-53 ~]$ cd my_folder/
+[ec2-user@ip-172-31-1-53 my_folder]$ touch my_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$ ls
+my_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$ vim my_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ cat my_file.txt
+hello
+
+[ec2-user@ip-172-31-1-53 my_folder]$ touch another_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ vim another_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ cat another_file.txt
+Good Day
+
+[ec2-user@ip-172-31-1-53 my_folder]$ cat another_file.txt >> my_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ cat my_file.txt
+hello
+
+Good Day
+
+[ec2-user@ip-172-31-1-53 my_folder]$ pwd
+/home/ec2-user/my_folder
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ ls
+another_file.txt  my_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$ for i in{1..20};do touch file$i.txt;done
+-bash: syntax error near unexpected token `in{1..20}'
+[ec2-user@ip-172-31-1-53 my_folder]$ for i in {1..20};do touch file$i.txt;done
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ ls
+another_file.txt  file11.txt  file14.txt  file17.txt  file2.txt   file4.txt  file7.txt  my_file.txt
+file1.txt         file12.txt  file15.txt  file18.txt  file20.txt  file5.txt  file8.txt
+file10.txt        file13.txt  file16.txt  file19.txt  file3.txt   file6.txt  file9.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ for i in {1..5};do mv file$i.txt file$i.yml;done
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ ls
+another_file.txt  file11.txt  file14.txt  file17.txt  file2.yml   file4.yml  file7.txt  my_file.txt
+file1.yml         file12.txt  file15.txt  file18.txt  file20.txt  file5.yml  file8.txt
+file10.txt        file13.txt  file16.txt  file19.txt  file3.yml   file6.txt  file9.txt
+[ec2-user@ip-172-31-1-53 my_folder]$ ls -lt
+total 8
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file20.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file11.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file12.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file13.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file14.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file15.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file16.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file17.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file18.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file19.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file10.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file3.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file4.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file5.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file6.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file7.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file8.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file9.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file1.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file2.yml
+-rw-r--r--. 1 ec2-user ec2-user 17 Jun 27 10:45 my_file.txt
+-rw-r--r--. 1 ec2-user ec2-user 10 Jun 27 10:45 another_file.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ ls -lt | head -n 5
+total 8
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file20.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file11.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file12.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file13.txt
+[ec2-user@ip-172-31-1-53 my_folder]$
+[ec2-user@ip-172-31-1-53 my_folder]$ ls -t | head -n 5
+file20.txt
+file11.txt
+file12.txt
+file13.txt
+file14.txt
+[ec2-user@ip-172-31-1-53 my_folder]$ ls -ltv | head -n 5
+total 8
+-rw-r--r--. 1 ec2-user ec2-user 10 Jun 27 10:45 another_file.txt
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file1.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file2.yml
+-rw-r--r--. 1 ec2-user ec2-user  0 Jun 27 10:47 file3.yml
