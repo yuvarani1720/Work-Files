@@ -1,0 +1,98 @@
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ nslookup guvi.in
+Server:         172.31.0.2
+Address:        172.31.0.2#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 104.26.5.88
+Name:   guvi.in
+Address: 104.26.4.88
+Name:   guvi.in
+Address: 172.67.70.207
+Name:   guvi.in
+Address: 2606:4700:20::ac43:46cf
+Name:   guvi.in
+Address: 2606:4700:20::681a:458
+Name:   guvi.in
+Address: 2606:4700:20::681a:558
+
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ host guvi.in
+guvi.in has address 172.67.70.207
+guvi.in has address 104.26.5.88
+guvi.in has address 104.26.4.88
+guvi.in has IPv6 address 2606:4700:20::681a:558
+guvi.in has IPv6 address 2606:4700:20::ac43:46cf
+guvi.in has IPv6 address 2606:4700:20::681a:458
+guvi.in mail is handled by 10 alt3.aspmx.l.google.com.
+guvi.in mail is handled by 10 alt4.aspmx.l.google.com.
+guvi.in mail is handled by 10 mailstore1.secureserver.net.
+guvi.in mail is handled by 20 smtp.secureserver.net.
+guvi.in mail is handled by 5 alt1.aspmx.l.google.com.
+guvi.in mail is handled by 5 alt2.aspmx.l.google.com.
+guvi.in mail is handled by 1 aspmx.l.google.com.
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ top c
+top - 16:55:23 up 4 days, 10:20,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 100 total,   1 running,  99 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.0 sy,  0.0 ni, 95.5 id,  0.0 wa,  0.0 hi,  0.0 si,  4.1 st
+MiB Mem :    949.4 total,    501.8 free,    139.6 used,    308.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    671.7 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1097 root      20   0   88444  32652  31412 S   0.0   3.4   0:12.61 /usr/lib/systemd/systemd-journald
+   2124 root      20   0 1240184  19092  11020 S   0.0   2.0   0:07.30 /usr/bin/amazon-ssm-agent
+      1 root      20   0  106656  17108  10720 S   0.0   1.8   0:14.17 /usr/lib/systemd/systemd --switched-root --syst+
+   1777 systemd+  20   0   22520  15028  11552 S   0.0   1.5   0:00.10 /usr/lib/systemd/systemd-resolved
+ 197628 ec2-user  20   0   21476  13396  10356 S   0.0   1.4   0:00.05 /usr/lib/systemd/systemd --user
+   1762 root      20   0   32204  11408   8244 S   0.0   1.2   0:00.06 /usr/lib/systemd/systemd-udevd
+ 197612 root      20   0   15780  10032   8340 S   0.0   1.0   0:00.01 sshd: ec2-user [priv]
+   1969 systemd+  20   0  236892   9844   8536 S   0.0   1.0   0:00.67 /usr/lib/systemd/systemd-networkd
+   1962 root      20   0   18780   9792   7560 S   0.0   1.0   0:01.06 /usr/lib/systemd/systemd-logind
+   2128 root      20   0   14324   8496   7296 S   0.0   0.9   0:00.98 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 +
+   1961 root      20   0   16800   7848   6856 S   0.0   0.8   0:00.01 /usr/lib/systemd/systemd-homed
+   2196 root      20   0   16316   6772   5888 S   0.0   0.7   0:00.77 /usr/lib/systemd/systemd-userdbd
+ 197773 root      20   0   16672   6708   5824 S   0.0   0.7   0:00.00 systemd-userwork: waiting...
+ 197779 root      20   0   16672   6704   5824 S   0.0   0.7   0:00.00 systemd-userwork: waiting...
+ 197774 root      20   0   16672   6692   5808 S   0.0   0.7   0:00.00 systemd-userwork: waiting...
+ 197645 ec2-user  20   0  108152   6540      0 S   0.0   0.7   0:00.00 (sd-pam)
+   1955 root      20   0   16316   6424   5544 S   0.0   0.7   0:00.00 /usr/bin/systemd-inhibit --what=handle-suspend-+
+ 197682 ec2-user  20   0   15780   6160   4468 S   0.0   0.6   0:00.02 sshd: ec2-user@pts/0
+ 197683 ec2-user  20   0  224032   4916   3480 S   0.0   0.5   0:00.01 -bash
+   1966 dbus      20   0    8444   4044   3436 S   0.0   0.4   0:00.01 /usr/bin/dbus-broker-launch --scope system --au+
+   1991 root      20   0  281928   3604   2704 S   0.0   0.4   0:03.52 /usr/sbin/gssproxy -D
+ 197842 ec2-user  20   0  224016   3308   2644 R   0.0   0.3   0:00.01 top c
+   2157 chrony    20   0   86320   3100   2536 S   0.0   0.3   0:06.73 /usr/sbin/chronyd -F 2
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ free -g
+               total        used        free      shared  buff/cache   available
+Mem:               0           0           0           0           0           0
+Swap:              0           0           0
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$
+
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ telnet 3.239.44.242
+Trying 3.239.44.242...
+telnet: connect to address 3.239.44.242: Connection refused
+[ec2-user@ip-172-31-1-53 ~]$ telnet 3.239.44.242 22
+Trying 3.239.44.242...
+Connected to 3.239.44.242.
+Escape character is '^]'.
+SSH-2.0-OpenSSH_8.7
+^C
+Connection closed by foreign host.
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$
+
+yuvarani@DESKTOP-PMFRRA6:~$ telnet guvi.com 9000
+Trying 172.67.146.154...
+
+
+[ec2-user@ip-172-31-1-53 ~]$
+[ec2-user@ip-172-31-1-53 ~]$ telnet guvi.com 9000
+Trying 104.21.79.166...
+^C
