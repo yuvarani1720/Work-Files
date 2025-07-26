@@ -1,0 +1,11 @@
+#!binbash
+
+URL=https://www.guvi.in
+
+HTTP_STATUS=$(curl -o devnull -s -w %{http_code} $URL)
+
+if [[ $HTTP_STATUS -ge 200 && $HTTP_STATUS -lt 300 ]]; then
+    echo Success! HTTP Status Code $HTTP_STATUS
+else
+    echo Received unexpected HTTP Status Code $HTTP_STATUS
+fi

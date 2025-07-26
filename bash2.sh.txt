@@ -1,0 +1,23 @@
+===Sample File Content========
+HI
+How are you
+Good day
+Our actions give happiness
+welcome to team, we give opportunities
+this line has welcome and give in it
+this one give no match
+we give nothing but welcome
+
+====Script to replace ==============
+#!/bin/bash
+
+FILE="$1"
+
+if [ ! -f "$FILE" ]; then
+    echo "❌ File '$FILE' not found!"
+    exit 1
+fi
+
+awk 'NR < 5 { print; next }
+     /welcome/ { gsub(/give/, "learning") }
+     { print }' "$FILE"
